@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'datein.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dateindjango',
+        'NAME': 'datein',
         'USER': 'postgres',
         'PASSWORD': '3611810700',
         'HOST': 'localhost',
