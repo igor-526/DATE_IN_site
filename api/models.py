@@ -18,6 +18,7 @@ class Profile(models.Model):
 
 
 class Settings(models.Model):
+    profile = models.ForeignKey(Profile, primary_key=True, on_delete=models.CASCADE, null=False, related_name='+')
     age_min = models.IntegerField(null=False)
     age_max = models.IntegerField(null=False)
     find_m = models.IntegerField(null=False)
@@ -38,7 +39,7 @@ class Settings(models.Model):
 
 
 class Images(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='of_profile')
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
     url = models.CharField(null=True)
     url_vk = models.CharField(null=True)
     tg_id = models.CharField(null=True)
@@ -46,19 +47,20 @@ class Images(models.Model):
 
 
 class Offerlist(models.Model):
-    profile = models.IntegerField(null=False)
-    offer_id = models.IntegerField(null=False)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    offer_id = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
     status = models.CharField(null=False)
 
 
 class Matchlist(models.Model):
-    profile_1 = models.IntegerField(null=False)
-    profile_2 = models.IntegerField(null=False)
+    profile_1 = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    profile_2 = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    date = models.DateField(null=False)
 
 
 class Complaintlist(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='profile_of')
-    complain_to = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='profile_to')
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    complain_to = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, related_name='+')
     cat = models.CharField(null=False)
     description = models.CharField(null=True)
     images = models.CharField(null=True)
