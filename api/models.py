@@ -18,7 +18,7 @@ class Profile(models.Model):
 
 
 class Settings(models.Model):
-    profile = models.ForeignKey(Profile, primary_key=True, on_delete=models.CASCADE, null=False, related_name='+')
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='sets')
     age_min = models.IntegerField(null=False)
     age_max = models.IntegerField(null=False)
     find_m = models.IntegerField(null=False)
@@ -48,7 +48,9 @@ class Images(models.Model):
 
 class Offerlist(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
-    offer_id = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    offer = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
+    dist = models.IntegerField(null=False)
+    date = models.DateField(null=False)
     status = models.CharField(null=False)
 
 

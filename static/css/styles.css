@@ -11,8 +11,8 @@
 @font-face {
   font-family: "CheddarGothicSans";
   src: local("Cheddar-Regular"),
-    url("../fonts/BOWLER.otf") format("otf"),
-    url("../fonts/BOWLER.otf") format("otf");
+    url("../fonts/CheddarGothicSans.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans.woff") format("woff");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -21,8 +21,8 @@
 @font-face {
   font-family: "CheddarGothicSans";
   src: local("Cheddar-Bold"),
-    url("../fonts/BOWLER.otf") format("otf"),
-    url("../fonts/BOWLER.otf") format("otf");
+    url("../fonts/CheddarGothicSans-Bold.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans-Bold.woff") format("woff");
   font-display: swap;
   font-weight: 600;
   font-style: normal;
@@ -31,11 +31,23 @@
 @font-face {
   font-family: "CheddarGothicSans";
   src: local("Cheddar-Italic"),
-    url("../fonts/BOWLER.otf") format("otf"),
-    url("../fonts/BOWLER.otf") format("otf");
+    url("../fonts/CheddarGothicSans-Italic.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans-Italic.woff") format("woff");
   font-display: swap;
   font-weight: 400;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "SofiaSans";
+  src: local("SofiaSans-Italic"),
+    url("../fonts/SofiaSans-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaSans";
+  src: local("SofiaSans-Regular"),
+    url("../fonts/SofiaSans-Regular.woff2") format("woff2");
 }
 
 * {
@@ -43,7 +55,7 @@
 }
 
 body {
-  font-family: "CheddarGothicSans";
+  font-family: "SofiaSans";
   color: var(--main-color);
   background-color: var(--light-color);
 }
@@ -75,7 +87,7 @@ p {
 }
 
 .header {
-  padding: 15px;
+  padding: 5px;
   display: flex;
   justify-content: end;
   background-color: var(--date-color);
@@ -92,9 +104,9 @@ p {
 .btn {
   display: inline-block;
   padding: 5px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
-  font-style: italic;
+  font-style: normal;
   color: var(--light-color);
   text-align: center;
   border: 3px solid var(--date-color);
@@ -113,7 +125,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .main {
@@ -124,6 +135,9 @@ section {
 
 .text {
   color: var(--date-color);
+  font-weight: 800;
+  font-size: 48px;
+  font-style: italic;
 }
 
 .logo_link {
@@ -140,9 +154,7 @@ section {
 }
 
 .messenger_item {
-  padding: 5px;
-  border: 3px solid var(--date-color);
-  transform: skew(-26deg);
+  padding: 20px;
 }
 
 .messenger_item:not(:last-child) {
