@@ -4,7 +4,7 @@ from django.db import models
 class Profile(models.Model):
     phone = models.IntegerField(null=True, unique=True)
     vk_id = models.IntegerField(null=True, unique=True)
-    tg_id = models.IntegerField(null=True, unique=True)
+    tg_id = models.BigIntegerField(null=True, unique=True)
     tg_nick = models.CharField(null=True)
     tg_url = models.CharField(null=True)
     name = models.CharField(null=False)
@@ -58,6 +58,7 @@ class Matchlist(models.Model):
     profile_1 = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
     profile_2 = models.ForeignKey(Profile, on_delete=models.CASCADE, null=False, related_name='+')
     date = models.DateField(null=False)
+    status = models.CharField(null=True)
 
 
 class Complaintlist(models.Model):
