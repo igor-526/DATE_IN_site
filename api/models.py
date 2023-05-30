@@ -15,6 +15,8 @@ class Profile(models.Model):
     geo_long = models.FloatField(null=False)
     description = models.CharField(null=True)
     height = models.IntegerField(null=True)
+    hobby = models.CharField(null=True)
+    animals = models.CharField(null=True)
     habits = models.CharField(null=True)
     children = models.CharField(null=True)
     busy = models.CharField(null=True)
