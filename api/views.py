@@ -29,7 +29,7 @@ async def uploadtovk(query):
         if not photo.url_vk:
             thread = Thread(target=uploadtovk_thread, args=(photo, upload), daemon=True)
             thread.start()
-            thread.join(0.0)
+            thread.join()
 
 
 class VKPhoto(APIView):

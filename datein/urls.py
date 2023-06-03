@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from api.urls import apiurlpatterns
 from home.views import Home, Rules, About, Privacy
+from monitor.views import Monitor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('rules/', Rules.as_view()),
     path('about/', About.as_view()),
     path('privacy/', Privacy.as_view()),
+    path('monitor/', Monitor.as_view()),
 ]

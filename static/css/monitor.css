@@ -1,0 +1,135 @@
+:root {
+  --main-color: #333;
+  --light-color: #fff;
+  --background-color: #f4f4f4;
+
+  --date-color: #683095;
+  --date-light-color: #a455ec;
+}
+
+
+@font-face {
+  font-family: "CheddarGothicSans";
+  src: local("Cheddar-Regular"),
+    url("../fonts/CheddarGothicSans.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CheddarGothicSans";
+  src: local("Cheddar-Bold"),
+    url("../fonts/CheddarGothicSans-Bold.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans-Bold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CheddarGothicSans";
+  src: local("Cheddar-Italic"),
+    url("../fonts/CheddarGothicSans-Italic.woff2") format("woff2"),
+    url("../fonts/CheddarGothicSans-Italic.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SofiaSans";
+  src: local("SofiaSans-Italic"),
+    url("../fonts/SofiaSans-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaSans";
+  src: local("SofiaSans-Regular"),
+    url("../fonts/SofiaSans-Regular.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SofiaSans";
+  color: var(--main-color);
+  background-color: var(--light-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  padding: 3%;
+  width: 100%;
+}
+
+.header {
+  min-height: 7vh;
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+  background-color: var(--date-color);
+}
+
+.menu {
+  display: flex;
+}
+
+.menu_item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  color: var(--light-color);
+  text-align: center;
+  border: 3px solid var(--date-color);
+  transition: color ease-in-out 0.3s,
+    background-color ease-in-out 0.3s;
+}
+
+.btn:focus,
+.btn:hover {
+  color: var(--light-color);
+  background-color: var(--date-color);
+}
+
+section {
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
