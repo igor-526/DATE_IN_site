@@ -74,13 +74,6 @@ img {
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
-
 .container {
   padding: 3%;
   width: 100%;
@@ -125,59 +118,39 @@ section {
   min-height: 93vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.text {
+h1 {
   color: var(--date-color);
   font-weight: 800;
   font-size: 48px;
   font-style: italic;
-  height: 30vh;
+  margin: 10px;
 }
 
-.logo_home {
-  display: block;
-  width: 500px;
-  height: 40vh;
-  background-image: url(../img/DateIn.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+h2 {
+  color: var(--date-color);
+  font-weight: 400;
+  font-size: 28px;
+  font-style: normal;
+  margin: 10px;
 }
 
-.messenger {
-  display: flex;
-  height: 23vh;
+h3 {
+  font-weight: 200;
+  font-size: 24px;
+  font-style: normal;
+  margin: 8px;
 }
 
-.messenger_item {
-  padding: 20px;
-}
-
-.messenger_item:not(:last-child) {
-  margin-right: 25px;
-}
-
-.messenger_link {
-  display: inline-block;
-  padding: 10px;
-  width: 70px;
-  height: 70px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: opacity ease-in-out 0.3s;
-}
-
-.vk {
-  background-image: url(../img/messengers/vkontakte_icon.svg);
-}
-
-.telegramm {
-  background-image: url(../img/messengers/telegram_icon.svg);
+p {
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  margin: 3px;
 }
