@@ -82,7 +82,6 @@ p {
 }
 
 .container {
-  padding: 3%;
   width: 100%;
 }
 
@@ -121,56 +120,47 @@ p {
   background-color: var(--date-color);
 }
 
-section {
-  min-height: 93vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .main {
   display: flex;
+  height: 93vh;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .text {
   color: var(--date-color);
   font-weight: 800;
-  font-size: 48px;
+  font-size: 5vh;
   font-style: italic;
-  height: 30vh;
 }
 
 .logo_home {
   display: block;
-  width: 500px;
-  height: 40vh;
+  width: 50vw;
+  height: 50vh;
   background-image: url(../img/DateIn.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .messenger {
+  margin-bottom: 5vh;
   display: flex;
-  height: 23vh;
-}
-
-.messenger_item {
-  padding: 20px;
 }
 
 .messenger_item:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 10vw;
 }
 
 .messenger_link {
   display: inline-block;
-  padding: 10px;
-  width: 70px;
-  height: 70px;
+  width: 12vw;
+  height: 12vh;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   transition: opacity ease-in-out 0.3s;
 }
 

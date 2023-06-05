@@ -1,7 +1,7 @@
 from api.models import Offerlist, Profile
 from haversine import haversine
 import datetime
-from rest_framework.response import Response
+from random import randint
 
 
 def sort_dist(offer):
@@ -20,21 +20,57 @@ async def do_offers(p_id):
         sex = [1, 2]
     else:
         sex = [1] if prof_for.sets.find_f == 1 else [2]
-    if prof_for.sex == 2:
-        offerlist = Profile.objects.filter(bdate__lte=bdate_max,
-                                           bdate__gte=bdate_min,
-                                           sex__in=sex,
-                                           sets__find_m=1).exclude(id=p_id)
-    else:
-        offerlist = Profile.objects.filter(bdate__lte=bdate_max,
-                                           bdate__gte=bdate_min,
-                                           sex__in=sex,
-                                           sets__find_f=1).exclude(id=p_id)
+    counter = 0
+    while counter != 5:
+        if prof_for.sex == 2:
+            offerlist = Profile.objects.filter(bdate__lte=bdate_max,
+                                               bdate__gte=bdate_min,
+                                               sex__in=sex,
+                                               sets__find_m=1,
+                                               status='active',
+                                               sets__last_usage__date__gte=datetime.date.today()-datetime.timedelta(
+                                                   days=7)).exclude(id=p_id).count()
+            limit = offerlist // 100 * 10
+            offset = randint(0, offerlist - limit)
+            offerlist = Profile.objects.filter(bdate__lte=bdate_max,
+                                               bdate__gte=bdate_min,
+                                               sex__in=sex,
+                                               sets__find_m=1,
+                                               status='active',
+                                               sets__last_usage__date__gte=datetime.date.today() - datetime.timedelta(
+                                                   days=7)).exclude(id=p_id)[limit:offset]
+            if offerlist:
+                break
+            else:
+                counter += 1
+        else:
+            offerlist = Profile.objects.filter(bdate__lte=bdate_max,
+                                               bdate__gte=bdate_min,
+                                               sex__in=sex,
+                                               sets__find_f=1,
+                                               status='active',
+                                               sets__last_usage__date__gte=datetime.date.today() - datetime.timedelta(
+                                                   days=7)).exclude(id=p_id).count()
+            limit = offerlist // 100 * 10
+            offset = randint(0, offerlist - limit)
+            offerlist = Profile.objects.filter(bdate__lte=bdate_max,
+                                               bdate__gte=bdate_min,
+                                               sex__in=sex,
+                                               sets__find_f=1,
+                                               status='active',
+                                               sets__last_usage__date__gte=datetime.date.today() - datetime.timedelta(
+                                                   days=7)).exclude(id=p_id)[limit:offset]
+            if offerlist:
+                break
+            else:
+                counter += 1
     offers = []
     for offer in offerlist:
         if offer.id not in offered_ids:
             offer_geo = (offer.geo_lat, offer.geo_long)
-            offers.append({'profile': offer, 'dist': haversine(prof_geo, offer_geo)})
+            dist = haversine(prof_geo, offer_geo)
+            if prof_for.sets.km_limit >= dist:
+                offers.append({'profile': offer, 'dist': dist})
     if len(offers) == 0:
         return 'no_profiles'
     offers = sorted(offers, key=sort_dist)

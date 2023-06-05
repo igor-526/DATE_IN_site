@@ -19,7 +19,64 @@
   </header>
   <section>
     <div class="main container">
-vvv
+      <h1>Профили</h1>
+      <table class="monitor">
+        <tr>
+          <th>Всего</th>
+          <th>Активно</th>
+          <th>ВК</th>
+          <th>TG</th>
+        </tr>
+        <tr>
+          <td>{{ pr_all }}</td>
+          <td>{{ pr_active }}</td>
+          <td>{{ pr_vk }}</td>
+          <td>{{ pr_tg }}</td>
+        </tr>
+      </table>
+      <h1>Активность</h1>
+      <table class="monitor">
+        <tr>
+          <th>Час</th>
+          <th>Сегодня</th>
+          <th>Вчера</th>
+          <th>Неделя+</th>
+        </tr>
+        <tr>
+          <td>{{ ac_hour }}</td>
+          <td>{{ ac_today }}</td>
+          <td>{{ ac_yesterday }}</td>
+          <td>{{ ac_week }}</td>
+        </tr>
+      </table>
+      <h1>Предложения</h1>
+      <table class="monitor">
+        <tr>
+          <th>Сформировано</th>
+          <th>Лайков</th>
+          <th>Пропусков</th>
+          <th>Не предложено</th>
+        </tr>
+        <tr>
+          <td>{{ of_all }}</td>
+          <td>{{ of_like }}</td>
+          <td>{{ of_pass }}</td>
+          <td>{{ of_not }}</td>
+        </tr>
+      </table>
+      <h1>Другое</h1>
+      <table class="monitor">
+        <tr>
+          <th>Мэтчи</th>
+          <th>Не обр. жалоб</th>
+          <th>Не обр. репортов</th>
+        </tr>
+        <tr>
+          <td>{{ matches }}</td>
+          <td>{{ comps }}</td>
+          <td>{{ reports }}</td>
+        </tr>
+      </table>
     </div>
   </section>
 </body>
