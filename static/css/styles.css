@@ -111,7 +111,7 @@ p {
   text-align: center;
   border: 3px solid var(--date-color);
   transition: color ease-in-out 0.3s,
-    background-color ease-in-out 0.3s;
+  background-color ease-in-out 0.3s;
 }
 
 .btn:focus,
@@ -133,6 +133,7 @@ p {
   font-weight: 800;
   font-size: 5vh;
   font-style: italic;
+  margin-top: 10vh;
 }
 
 .logo_home {
@@ -146,12 +147,12 @@ p {
 }
 
 .messenger {
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
   display: flex;
 }
 
 .messenger_item:not(:last-child) {
-  margin-right: 10vw;
+  margin-right: 5vw;
 }
 
 .messenger_link {
