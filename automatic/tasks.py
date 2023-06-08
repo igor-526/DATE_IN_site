@@ -1,5 +1,5 @@
 from datein.celery import app
-from api.models import Profile, Settings, Matchlist
+from api.models import Profile, Settings, Matchlist, Images
 from automatic.models import Messages
 from automatic.utils import *
 import os
@@ -11,7 +11,8 @@ from api import config
 
 
 @app.task
-def upload_to_vk(query):
+def upload_to_vk(pr_id):
+    query = Images.objects.filter(profile_id=pr_id)
     bot = vk_api.VkApi(token=config.vk_bot_token)
     upload = vk_api.VkUpload(bot)
     for photo in query:
