@@ -12,12 +12,14 @@ from api import config
 
 @app.task
 def upload_to_vk(pr_id):
-    query = Images.objects.filter(profile_id=pr_id)
+    query = Images.objects.filter(profile_id=pr_id,
+                                  description='profile_photo').all()
     bot = vk_api.VkApi(token=config.vk_bot_token)
     upload = vk_api.VkUpload(bot)
     for photo in query:
         if not photo.url_vk:
             imgurl = photo.url
+            print(imgurl)
             urllib.request.urlretrieve(imgurl, f'uploader/{photo.tg_id}.jpg')
             uphoto = upload.photo_messages(peer_id=28964076, photos=f'uploader/{photo.tg_id}.jpg')
             vk_url = f'photo{uphoto[0]["owner_id"]}_{uphoto[0]["id"]}_{uphoto[0]["access_key"]}'
