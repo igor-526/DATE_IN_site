@@ -3,7 +3,7 @@ from django.db import models
 
 class Profile(models.Model):
     phone = models.IntegerField(null=True, unique=True)
-    vk_id = models.IntegerField(null=True, unique=True)
+    vk_id = models.BigIntegerField(null=True, unique=True)
     tg_id = models.BigIntegerField(null=True, unique=True)
     tg_nick = models.CharField(null=True)
     name = models.CharField(null=False)

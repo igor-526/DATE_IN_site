@@ -1,9 +1,0 @@
-[2023-05-30 15:25:52 +0300] [31180] [INFO] Starting gunicorn 20.1.0
-[2023-05-30 15:25:52 +0300] [31180] [INFO] Listening at: http://127.0.0.1:8000 (31180)
-[2023-05-30 15:25:52 +0300] [31180] [INFO] Using worker: sync
-[2023-05-30 15:25:52 +0300] [31181] [INFO] Booting worker with pid: 31181
-[2023-05-30 15:25:52 +0300] [31182] [INFO] Booting worker with pid: 31182
-[2023-05-30 15:25:52 +0300] [31183] [INFO] Booting worker with pid: 31183
-Not Found: /favicon.ico
-Not Found: /about
-Not Found: /about
