@@ -17,7 +17,8 @@ async def do_offers(p_id):
     matchlist_ids = [pr.profile_2 for pr in matchlist]
     liked = Offerlist.objects.filter(offer=p_id, status='like').exclude(profile__in=matchlist_ids)
     liked_ids = [pr.profile_1 for pr in liked]
-    offered_ids.append(lid for lid in liked_ids)
+    for lid in liked_ids:
+        offered_ids.append(lid)
     today_date = datetime.date.today()
     bdate_max = today_date.replace(year=today_date.year-prof_for.sets.age_min)
     bdate_min = today_date.replace(year=today_date.year-prof_for.sets.age_max)
