@@ -36,6 +36,5 @@ urllib3==2.0.2
 vine==5.0.0
 vk-api==11.9.9
 vkapi==1.1
-vkwave==0.2.17
 wcwidth==0.2.6
 yarl==1.9.2
