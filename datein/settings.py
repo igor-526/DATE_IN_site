@@ -80,27 +80,27 @@ WSGI_APPLICATION = 'datein.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'datein',
-        'USER': 'site',
-        'PASSWORD': 'hG1jXQOe',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'datein',
-#         'USER': 'dbadmin',
-#         'PASSWORD': 'VWj4bsw4',
-#         'HOST': '80.87.192.255',
+#         'USER': 'site',
+#         'PASSWORD': 'hG1jXQOe',
+#         'HOST': 'localhost',
 #         'PORT': '5432'
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'datein',
+        'USER': 'dbadmin',
+        'PASSWORD': 'VWj4bsw4',
+        'HOST': '80.87.192.255',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation
@@ -138,10 +138,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#   os.path.join(BASE_DIR, "static"),
-# ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, "static"),
+]
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
