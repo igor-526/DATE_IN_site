@@ -16,9 +16,9 @@ async def do_offers(p_id):
     matchlist = Matchlist.objects.filter(profile_1=p_id).exclude(profile_2__in=offered_ids)
     matchlist_ids = [pr.profile_2 for pr in matchlist]
     liked = Offerlist.objects.filter(offer=p_id, status='like').exclude(profile__in=matchlist_ids)
-    liked_ids = [pr.profile_1 for pr in liked]
+    liked_ids = [pr.profile for pr in liked]
     for lid in liked_ids:
-        offered_ids.append(lid)
+        offered_ids.append(lid.id)
     today_date = datetime.date.today()
     bdate_max = today_date.replace(year=today_date.year-prof_for.sets.age_min)
     bdate_min = today_date.replace(year=today_date.year-prof_for.sets.age_max)
@@ -35,6 +35,7 @@ async def do_offers(p_id):
         find_f = [0, 1]
         find_m = [1]
     while counter != 5:
+        print(offered_ids)
         offerlist = Profile.objects.filter(bdate__lte=bdate_max,
                                            bdate__gte=bdate_min,
                                            sex__in=sex,
