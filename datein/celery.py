@@ -10,18 +10,18 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'resetlikes': {
         'task': 'automatic.tasks.resetlikes',
-        'schedule': crontab(hour='8, 17')
+        'schedule': crontab(hour='8, 17', minute='0')
     },
     'prepare_messages': {
         'task': 'automatic.tasks.prepare_messages',
-        'schedule': crontab(hour='3', day_of_week='friday')
+        'schedule': crontab(hour='3', day_of_week='friday', minute='0')
     },
     'send_messages': {
         'task': 'automatic.tasks.send_messages',
-        'schedule': crontab(hour='17', day_of_week='friday')
+        'schedule': crontab(hour='17', day_of_week='friday', minute='0')
     },
     'delete_profiles': {
         'task': 'automatic.tasks.delete_profiles',
-        'schedule': crontab(hour='4')
+        'schedule': crontab(hour='4', minute='0')
     },
 }
