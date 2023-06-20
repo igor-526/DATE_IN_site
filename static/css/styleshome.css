@@ -7,37 +7,6 @@
   --date-light-color: #a455ec;
 }
 
-
-@font-face {
-  font-family: "CheddarGothicSans";
-  src: local("Cheddar-Regular"),
-    url("../fonts/CheddarGothicSans.woff2") format("woff2"),
-    url("../fonts/CheddarGothicSans.woff") format("woff");
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CheddarGothicSans";
-  src: local("Cheddar-Bold"),
-    url("../fonts/CheddarGothicSans-Bold.woff2") format("woff2"),
-    url("../fonts/CheddarGothicSans-Bold.woff") format("woff");
-  font-display: swap;
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CheddarGothicSans";
-  src: local("Cheddar-Italic"),
-    url("../fonts/CheddarGothicSans-Italic.woff2") format("woff2"),
-    url("../fonts/CheddarGothicSans-Italic.woff") format("woff");
-  font-display: swap;
-  font-weight: 400;
-  font-style: italic;
-}
-
 @font-face {
   font-family: "SofiaSans";
   src: local("SofiaSans-Italic"),
@@ -82,7 +51,6 @@ p {
 }
 
 .container {
-  padding: 3%;
   width: 100%;
 }
 
@@ -112,7 +80,7 @@ p {
   text-align: center;
   border: 3px solid var(--date-color);
   transition: color ease-in-out 0.3s,
-    background-color ease-in-out 0.3s;
+  background-color ease-in-out 0.3s;
 }
 
 .btn:focus,
@@ -121,56 +89,48 @@ p {
   background-color: var(--date-color);
 }
 
-section {
-  min-height: 93vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .main {
   display: flex;
+  height: 93vh;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .text {
   color: var(--date-color);
   font-weight: 800;
-  font-size: 48px;
+  font-size: 5vh;
   font-style: italic;
-  height: 30vh;
+  margin-top: 10vh;
 }
 
 .logo_home {
   display: block;
-  width: 500px;
-  height: 40vh;
-  background-image: url(../img/DateIn.png);
+  width: 50vw;
+  height: 50vh;
+  background-image: url(../img/logo/LogoFullM.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .messenger {
+  margin-bottom: 10vh;
   display: flex;
-  height: 23vh;
-}
-
-.messenger_item {
-  padding: 20px;
 }
 
 .messenger_item:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 5vw;
 }
 
 .messenger_link {
   display: inline-block;
-  padding: 10px;
-  width: 70px;
-  height: 70px;
+  width: 12vw;
+  height: 12vh;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   transition: opacity ease-in-out 0.3s;
 }
 

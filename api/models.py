@@ -3,10 +3,9 @@ from django.db import models
 
 class Profile(models.Model):
     phone = models.IntegerField(null=True, unique=True)
-    vk_id = models.IntegerField(null=True, unique=True)
+    vk_id = models.BigIntegerField(null=True, unique=True)
     tg_id = models.BigIntegerField(null=True, unique=True)
     tg_nick = models.CharField(null=True)
-    tg_url = models.CharField(null=True)
     name = models.CharField(null=False)
     bdate = models.DateField(null=False)
     sex = models.IntegerField(null=False)
@@ -21,6 +20,7 @@ class Profile(models.Model):
     children = models.CharField(null=True)
     busy = models.CharField(null=True)
     status = models.CharField(null=False)
+    limit = models.IntegerField(null=False, default=50)
 
 
 class Settings(models.Model):
@@ -40,8 +40,7 @@ class Settings(models.Model):
     created = models.DateField(null=False)
     deactivated = models.DateTimeField(null=True)
     last_usage = models.DateTimeField(null=False)
-    offer_kilometrage = models.IntegerField(null=True)
-    offer_ofset = models.IntegerField(null=True)
+    km_limit = models.IntegerField(null=False, default=15)
 
 
 class Images(models.Model):

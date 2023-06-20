@@ -27,5 +27,5 @@ urlpatterns = [
     path('rules/', Rules.as_view()),
     path('about/', About.as_view()),
     path('privacy/', Privacy.as_view()),
-    path('monitor/', Monitor.as_view()),
+    # path('monitor/', Monitor.as_view()),
 ]

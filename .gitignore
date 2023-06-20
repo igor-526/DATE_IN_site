@@ -2,3 +2,9 @@ __pycache__/
 venv/
 .idea/
 api/migrations/*
+datein/settings.py
+celerybeat-schedule
+logs/celery.log
+logs/celerybeat.log
+logs/datein.log
+
