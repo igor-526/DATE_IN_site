@@ -6,52 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DateIn</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
-  <link rel="stylesheet" href="{% static 'css/styleshome.css'%}">
-  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
-
 <body>
-  <header>
-    <div class="header container">
-      <ul class="menu">
-        <li class="menu_item">
-          <a id="menu1" class="menu_link btn" href="about">Инфо</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <section>
-    <div class="main container">
-      <p class="text">Не тиндер и точка</p>
-      <div class="logo">
-        <div class="logo_home"></div>
+  <div class="wrapper">
+    <header>
+      <div class="header__container">
+        <a href="datein.ru"><img src="img/logo/logomenu.png"></a>
+        <div class="header__menu">
+          <div class="menu__icon"><span></span></div>
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li><a class="menu__item" href="#">Что это</a></li>
+              <li><a class="menu__item" href="#">Статьи</a></li>
+            </ul>
+        </nav>
+        </div>
       </div>
-      <ul class="messenger">
-        <li class="messenger_item">
-          <a class="messenger_link vk" href="https://vk.com/im?sel=-220102605"></a>
-        </li>
-        <li class="messenger_item">
-          <a class="messenger_link telegramm" href="https://t.me/datein_offical_bot"></a>
-        </li>
-      </ul>
-    </div>
-  </section>
-<!-- Top.Mail.Ru counter -->
-<script type="text/javascript">
-var _tmr = window._tmr || (window._tmr = []);
-_tmr.push({id: "3360209", type: "pageView", start: (new Date()).getTime()});
-(function (d, w, id) {
-  if (d.getElementById(id)) return;
-  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-  ts.src = "https://top-fwz1.mail.ru/js/code.js";
-  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-})(document, window, "tmr-code");
-</script>
-<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3360209;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
-<!-- /Top.Mail.Ru counter -->
-</body>
+    </header>
+    <main>
 
+    </main>
+  </div>
+  <script src="js/menu.js"></script>
+</body>
 </html>
