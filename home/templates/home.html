@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DateIn</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'css/home.css'%}">
+  <link rel="icon" href="{% static 'img/favicon.png'%}" type="image/x-icon">
 </head>
 <body>
+  {% include 'yametrika.html' %}
   <div class="wrapper">
     <header>
       <div class="header__container">
-        <a href="datein.ru"><img src="img/logo/logomenu.png"></a>
         <div class="header__menu">
           <div class="menu__icon"><span></span></div>
           <nav class="menu__body">
             <ul class="menu__list">
-              <li><a class="menu__item" href="#">Что это</a></li>
-              <li><a class="menu__item" href="#">Статьи</a></li>
+              <li><a class="menu__item" href="articles">статьи</a></li>
+              <li><a class="menu__item" href="info/about">что это?</a></li>
             </ul>
         </nav>
         </div>
       </div>
     </header>
     <main>
-
+      <section class="slogan">
+        <div>знакомься легко и быстро</div>
+      </section>
+      <div class="logomain"></div>
+      <section class="messenger_arrows_section">
+        <div class="messenger_arrows">
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+        </div>
+      </section>
+        <section class="messenger_links">
+          <div class="messenger_icons">
+            <div class="messenger_tg">
+              <a href="https://t.me/datein_offical_bot">
+                <img src="{% static 'img/messengers/tg.svg'%}">
+              </a>
+            </div>
+            <div class="messenger_vk">
+              <a href="https://vk.com/im?sel=-220102605">
+                <img src="{% static 'img/messengers/vk.svg'%}">
+              </a>
+            </div>
+          </div>
+        </section>
+      
     </main>
   </div>
-  <script src="js/menu.js"></script>
+  <script src="{% static 'js/menu.js'%}"></script>
 </body>
 </html>

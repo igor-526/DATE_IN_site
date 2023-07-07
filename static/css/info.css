@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Sofia+Sans+Condensed:wght@300;400;600&family=Sofia+Sans:ital@0;1&display=swap');
+
+:root {
+    --date-color: #683095;
+}
+
+.wrapper{
+    min-height: 100%;
+}
+ 
+main{
+    display: flex;
+}
+
+.content{
+    width: 90vw;
+    margin: 10px auto;
+}
+
+
+h1{
+    font-size: 38px;
+    color: var(--date-color);
+    font-family: 'Russo One';
+    font-weight: normal;
+}
+
+h2{
+    font-size: 30px;
+    margin: 0;
+    font-family: 'Sofia Sans Condensed';
+}
+
+p{
+    font-size: 24px;
+    margin: 10px 0;
+    font-family: 'Sofia Sans';
+}
+
+@media (max-width: 1000px){
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    p{
+        font-size: 18px;
+    }
+
+}

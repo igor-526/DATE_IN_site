@@ -3,7 +3,6 @@
 :root {
   --date-color: #683095;
 }
-
 .wrapper{
   min-height: 100%;
 }
@@ -19,7 +18,14 @@ header{
   margin: 0px auto;
   padding: 0 10px;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
+}
+
+.header__container img{
+  height: 50px;
+  display: block;
+  position: relative;
+  z-index: 5;
 }
 
 .menu__item{
@@ -111,114 +117,3 @@ header{
 body._lock{
   overflow: hidden;
 }
-
-/*СТИЛИ СТРАНИЦЫ*/
-
-main{
-  height: calc(100vh - 60px);
-}
-
-.slogan{
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  text-transform: uppercase;
-  font-family: "Russo One";
-  color: var(--date-color);
-}
-
-.slogan div{
-  text-align: center;
-}
-
-@media (max-width: 450px){
-  .slogan{
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 380px){
-  .slogan{
-    font-size: 30px;
-  }
-}
-
-.logomain{
-  display: block;
-  width: 100vw;
-  height: 45%;
-  background-image: url(../img/logo/LogoFullM.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.messenger_arrows_section{
-  height: 10%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.messenger_arrows{
-  width: 35%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.arrow{
-  background-image: url(../img/arrow.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  width: 30%;
-}
-
-.arrow:nth-child(2n){
-  margin-top: 3%;
-}
-
-.messenger_links{
-  height: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.messenger_icons{
-  padding-top: 1%;
-  height: 85%;
-  width: 30%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.messenger_icons div{
-  height: 100%;
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.messenger_icons img{
-  height: 80%;
-  width: 100%;
-}
-
-@media (max-width: 1200px){
-  .messenger_icons{
-    width: 50%;
-  }
-}
-
-@media (max-width: 700px){
-  .messenger_icons{
-    width: 70%;
-  }
-  .messenger_arrows{
-    width: 50%;
-  }
-}
-

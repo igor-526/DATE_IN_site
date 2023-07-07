@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date In - Статьи</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'css/menu.css'%}">
+  <link rel="stylesheet" href="{% static 'css/articles.css'%}">
+  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+  {% include 'yametrika.html' %}
+  <div class="wrapper">
+    <header>
+      {% include 'menu.html' %}
+    </header>
+    <main>
+      <div class="title">
+        <h1>Статьи</h1>
+        <button>Предложить статью</button>
+      </div>
+      <div class="articles">
+        {% for article in articles %}
+        <div class="article__block">
+          <div class="article__title">
+            <h3>{{article.title}}</h3>
+          </div>
+          <div class="article__text">
+            <p>{{ article.text }}.. <a href="#">читать далее..</a></p>
+          </div>
+          <div class="article__meta">
+              <div class="article__owner">
+                <a href="#">{{ article.owner }}</a>
+              </div>
+              <div class="article__date">
+                {{ article.date }}
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

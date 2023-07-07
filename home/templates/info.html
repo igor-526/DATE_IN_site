@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DateIn</title>
+  <title>Date In - {{ name }}</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
-  <link rel="stylesheet" href="{% static 'css/stylestext.css'%}">
   <link rel="stylesheet" href="{% static 'css/menu.css'%}">
+  <link rel="stylesheet" href="{% static 'css/info.css'%}">
   <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
 </head>
 
 <body>
-  {% include 'headerinfo.html' %}
-  <section>
-    <div class="main container">
+  {% include 'yametrika.html' %}
+  <div class="wrapper">
+    <header>
+      {% include 'menu.html' %}
+    </header>
+  <main>
+    <div class="content">
       <h1>{{ name }}</h1>
       {% include infotemp %}
     </div>
-  </section>
+  </main>
 </body>
 
 </html>

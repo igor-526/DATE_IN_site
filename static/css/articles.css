@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Sofia+Sans+Condensed:wght@300;400;600&family=Sofia+Sans:ital@0;1&display=swap');
+
+:root {
+  --date-color: #683095;
+}
+
+.title{
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 38px;
+    color: var(--date-color);
+    font-family: 'Russo One';
+    font-weight: normal;
+}
+
+button{
+  background-color: #ffffff;
+  border: 2px solid var(--date-color);
+  height: 38px;
+  font-family: 'Sofia Sans Condensed';
+  text-transform: uppercase;
+  color: var(--date-color);
+  font-size: 24px;
+}
+
+button:hover{
+  background-color: var(--date-color);
+  color: #ffffff;
+}
+
+.articles{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.article__block{
+  width: 100%;
+  min-height: 100px;
+  background-color: #6730951c;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.article__title h3{
+  font-size: 22px;
+  font-family: "Sofia Sans";
+  color: var(--date-color);
+  margin: 0;
+}
+
+.article__text p{
+  font-size: 18px;
+  font-family: "Sofia Sans Condensed";
+}
+
+.article__text a{
+  font-size: 18px;
+  font-family: "Sofia Sans Condensed";
+  color: var(--date-color);
+}
+
+.article__meta{
+  display: flex;
+  justify-content: space-between;
+}
+
+.article__owner a{
+  font-size: 18px;
+  font-family: "Sofia Sans";
+  color: var(--date-color);
+}
+
+.article__date{
+  font-size: 18px;
+  font-family: "Sofia Sans";
+  color: var(--date-color);
+}

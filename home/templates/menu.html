@@ -1,0 +1,14 @@
+{% load static %}
+<div class="header__container">
+    <a href="/"><img src="{% static 'img/logo/logomenu.png'%}"></a>
+    <div class="header__menu">
+      <div class="menu__icon"><span></span></div>
+      <nav class="menu__body">
+        <ul class="menu__list">
+            {% for item in menu %}
+          <li><a class="menu__item" href="{{ item.href }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    </div>
+  </div>

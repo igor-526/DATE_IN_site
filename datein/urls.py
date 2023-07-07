@@ -18,14 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from api.urls import apiurlpatterns
 from home.views import Home, Rules, About, Privacy
-from monitor.views import Monitor
+from articles.views import AllArticles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(apiurlpatterns)),
     path('', Home.as_view()),
-    path('rules/', Rules.as_view()),
-    path('about/', About.as_view()),
-    path('privacy/', Privacy.as_view()),
-    # path('monitor/', Monitor.as_view()),
+    path('info/rules/', Rules.as_view()),
+    path('info/about/', About.as_view()),
+    path('info/privacy/', Privacy.as_view()),
+    path('articles/', AllArticles.as_view()),
 ]

@@ -17,8 +17,8 @@ class Rules(TemplateView):
     def get(self, request, *args, **kwargs):
         context = {'infotemp': 'rules.html',
                    'name': 'Правила использования',
-                   'menu': [{'name': 'Политика конфиденциальности', 'href': 'privacy'},
-                            {'name': 'Что это', 'href': 'about'}]}
+                   'menu': [{'name': 'Политика конф.', 'href': '/info/privacy'},
+                            {'name': 'Что это?', 'href': '/info/about'}]}
 
         return render(request, self.template_name, context)
 
@@ -29,8 +29,8 @@ class About(TemplateView):
     def get(self, request, *args, **kwargs):
         context = {'infotemp': 'about.html',
                    'name': 'Что такое DATE IN?',
-                   'menu': [{'name': 'Политика конфиденциальности', 'href': 'privacy'},
-                            {'name': 'Правила использования', 'href': 'rules'}]}
+                   'menu': [{'name': 'Политика конф.', 'href': '/info/privacy'},
+                            {'name': 'Правила использования', 'href': '/info/rules'}]}
 
         return render(request, self.template_name, context)
 
@@ -41,7 +41,7 @@ class Privacy(TemplateView):
     def get(self, request, *args, **kwargs):
         context = {'infotemp': 'privacy.html',
                    'name': 'Политика конфиденциальности',
-                   'menu': [{'name': 'Правила использования', 'href': 'rules'},
-                            {'name': 'Что это', 'href': 'about'}]}
+                   'menu': [{'name': 'Правила использования', 'href': '/info/rules'},
+                            {'name': 'Что это?', 'href': '/info/about'}]}
 
         return render(request, self.template_name, context)
